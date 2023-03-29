@@ -7,21 +7,23 @@ import java.util.Scanner;
 
 public class Adb {
 
+  //Conection object represents the connection to the sql database, it returns basic info on the tables
   static void NodeEdgeInfo(Connection connection, String Case_1) {
-    PreparedStatement ps = null;
-    ResultSet result = null;
-    Scanner ID_scan = new Scanner(System.in);
+    PreparedStatement ps = null; //object to execute a command in
+    ResultSet result = null;//Object with a cursor that points to specific line in a table returns false at end
+    Scanner ID_scan = new Scanner(System.in); //What are we scanning?
     System.out.println("Please input node/edge ID (if no, hit enter):");
-    String ID = ID_scan.nextLine();
-    l1nodes ResultNode = null;
-    try {
-      switch (Case_1) {
+    String ID = ID_scan.nextLine();//take input from scanner and store in id
+    l1nodes ResultNode = null;//What is this?
+    try {//If an error occurs in try, continue to catch
+      switch (Case_1) {//Param value causes code to go to the corresponding case
         case "1":
           // 1- Display all node information
-          ps = connection.prepareStatement("Select * from l1nodes");
-          result = ps.executeQuery();
+          ps = connection.prepareStatement("Select * from l1nodes"); //creates an object holding an sql statement
+          result = ps.executeQuery();//Execute the statement stored in the object, and put it at cursor location
 
-          while (result.next()) {
+          while (result.next()) {//While there are more lines, move through the table
+            //What is this?
             ResultNode =
                 new l1nodes(
                     result.getString("nodeID"),
@@ -37,7 +39,7 @@ public class Adb {
           break;
         case "2":
           // 2- Display all edge information
-          ps = connection.prepareStatement("Select * from l1edges");
+          ps = connection.prepareStatement("Select * from l1edges"); //create an execute object and put it into ps
           result = ps.executeQuery();
 
           while (result.next()) {
