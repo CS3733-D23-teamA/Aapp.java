@@ -73,7 +73,7 @@ public class Adb {
           }
           break;
         case "4":
-          // 4- Display particular edge information by id
+          // 4- Display particular edge information by id123
           ps = connection.prepareStatement("Select * from l1edges where edgeID = ?");
           ps.setString(1, ID);
 
