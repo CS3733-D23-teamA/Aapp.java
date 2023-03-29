@@ -1,5 +1,7 @@
 package edu.wpi.teamA.database;
 
+import java.util.ArrayList;
+
 public class l1nodes {
   String nodeID;
   int xcoord;
@@ -9,7 +11,15 @@ public class l1nodes {
   String nodeType;
   String longName;
   String shortName;
+  ArrayList<l1edges> edgeList;
 
+  public int edgeCount() {
+    return edgeList.size();
+  }
+
+  public l1edges getEdge(int index) {
+    return edgeList.get(index);
+  }
   public static void DisplayNode(l1nodes Node) {
     System.out.println(
         "ID: "
@@ -56,5 +66,9 @@ public class l1nodes {
     this.nodeType = nodeType;
     this.longName = longName;
     this.shortName = shortName;
+  }
+
+  public String getNodeID() {
+    return nodeID;
   }
 }
