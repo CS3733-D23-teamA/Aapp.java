@@ -8,6 +8,7 @@ public class l1edges {
   public l1nodes getStartNode() {
     return startNode;
   }
+
   public l1nodes getEndNode() {
     return endNode;
   }

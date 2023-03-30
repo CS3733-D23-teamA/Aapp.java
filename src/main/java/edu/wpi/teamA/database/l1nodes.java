@@ -20,6 +20,7 @@ public class l1nodes {
   public l1edges getEdge(int index) {
     return edgeList.get(index);
   }
+
   public static void DisplayNode(l1nodes Node) {
     System.out.println(
         "ID: "
@@ -66,9 +67,14 @@ public class l1nodes {
     this.nodeType = nodeType;
     this.longName = longName;
     this.shortName = shortName;
+    this.edgeList = new ArrayList<l1edges>();
   }
 
   public String getNodeID() {
     return nodeID;
+  }
+
+  public void addEdge(l1edges edge) {
+    edgeList.add(edge);
   }
 }
